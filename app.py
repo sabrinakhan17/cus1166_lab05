@@ -39,13 +39,13 @@ def register_student(course_id):
     return render_template("course_details.html", course = course, students = students)
 
 def main():
-    if (len(sys.argv) == 2):
+    if (len(sys.argv)==2):
         print(sys.argv)
-    if sys.argv[1] == 'createdb':
-        db.create_all()
+        if sys.argv[1] == 'createdb':
+            db.create_all()
     else:
         print("Run app using 'flask run'")
-        print("To create a database use python app.py createdb")
+        print("To create a database use 'python app.py createdb'")
 
 if __name__ == "__main__":
      with app.app_context():
